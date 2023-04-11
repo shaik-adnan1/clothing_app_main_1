@@ -31,3 +31,42 @@ git checkout lesson-15
 git checkout -b my-main-branch
 ```
 3. Now you can just code on this branch, push code from this branch up to your forked repo etc. The main thing to remember is that you want to be on this branch for your own code, so remember what you named this branch!
+
+
+<!-- REACT ROUTING -->
+
+// BrowserRoute
+
+first importing the BrowserRoute component in the Top most level component in out application 
+
+In this case it is our Highest level component is <App />
+
+<App /> component  in the index.js file
+
+Now the <App /> component must  be nested inside the <BrowserRoute /> component!
+
+with the <BrowserRoute /> placed, 
+
+it unlocks or enables us to use the routing features in the browser
+
+<!-- Routing -->
+
+
+Now Setting up the Routing part itself
+
+for that we need to first import {Routes and Route} components form the 'react-route-dom'
+
+import { Routes, Route } from "react-router-dom";
+
+Now Routes and Route can be used as follows
+
+<Routes>  ---> Enables us to use the Route component
+      <Route path='/home' element={<Home />}> ----> the path prop checks if the url is ending with '/home' and renders the element prop.. Here <Home /> component is rendered to page
+        <Route path='shop' element={<Shop />} />
+      </Route>
+</Routes>
+
+
+
+
+
