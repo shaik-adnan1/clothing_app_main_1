@@ -66,6 +66,15 @@ Now Routes and Route can be used as follows
       </Route>
 </Routes>
 
+<!-- Using <Link /> -->
+
+Link component will creates a link through which you can route between pages!!
+
+<Link className="nav-link" to='/shop'>Shop</Link> ----> The "to" attribute sets the destination of the route and you can also pass in component into the Link tag
+
+
+
+
 
 
 
