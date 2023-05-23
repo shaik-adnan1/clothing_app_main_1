@@ -27,9 +27,9 @@ const SignIn = () => {
     <div>
       <h1>This is the signIn page</h1>
       <button onClick={logGoogleUser}>Signin with google popup</button>
-      <button onClick={logGoogleRedirectUser}>
+      {/* <button onClick={logGoogleRedirectUser}>
         Signin with google redirecet
-      </button>
+      </button> */}
     </div>
   );
 };

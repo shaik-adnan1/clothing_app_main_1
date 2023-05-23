@@ -50,6 +50,7 @@ export const createUserDocumentFromAuth = async userAuth => {
   console.log(userSnapshot.exists());
 
   // if user data doesn't exist
+  // Hye htere
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
 
@@ -69,6 +70,7 @@ export const createUserDocumentFromAuth = async userAuth => {
   }
 
   // if user data exists
+  
   // return userDecRef
   return userDocRef;
 };
