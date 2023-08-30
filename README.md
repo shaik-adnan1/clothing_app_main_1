@@ -39,6 +39,8 @@ git checkout -b my-main-branch
 
 first importing the BrowserRoute component in the Top most level component in out application 
 
+import { BrowserRouter } from 'react-router-dom';
+
 In this case it is our Highest level component is <App />
 
 <App /> component  in the index.js file
@@ -47,16 +49,16 @@ Now the <App /> component must  be nested inside the <BrowserRoute /> component!
 
 with the <BrowserRoute /> placed, 
 
-it unlocks or enables us to use the routing features in the browser
+It unlocks or enables us to use the routing features in the browser
 
 <!-- Routing -->
 
 
 Now Setting up the Routing part itself
 
-for that we need to first import {Routes and Route} components form the 'react-route-dom'
+For that we need to first import {Routes and Route} components form the 'react-route-dom'
 
-import { Routes, Route } from "react-router-dom";
+<import { Routes, Route } from "react-router-dom";> 
 
 Now Routes and Route can be used as follows
 
