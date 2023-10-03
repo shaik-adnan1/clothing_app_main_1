@@ -9,12 +9,19 @@
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans Condensed';
+  font-family: "Gruppo", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: bolder;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
+  
+  &:not(:first-child) {
+    margin-left: 15px;
+
+  }
 
   &:hover {
     background-color: white;
@@ -43,4 +50,5 @@
       border: none;
     }
   }
+
 }
