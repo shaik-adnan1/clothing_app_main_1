@@ -11,7 +11,9 @@ import Button from "../button/button.component";
 
 import "./sign-in-form.style.scss";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../context/user.context";
+
 
 const defaultFormFields = {
   email: "",
@@ -22,7 +24,9 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  console.log(formFields);
+  // importing the value of a userContext. 
+
+  const { setCurrentUser } = useContext(UserContext)
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -32,13 +36,14 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
+
     await createUserDocumentFromAuth(user);
   };
 
   const handleChange = e => {
     const { name, value } = e.target;
 
-    console.log(name, value);
+    // console.log(name, value);
 
     setFormFields({ ...formFields, [name]: value });
   };
@@ -49,13 +54,14 @@ const SignInForm = () => {
     e.preventDefault();
 
     try {
-      const response = await signInAuthWithEmailAndPassword(email, password);
-      console.log(response)
+      const { user } = await signInAuthWithEmailAndPassword(email, password);
+      // Now we can use the properties/values form the userContext object  
+      setCurrentUser(user)
       resetFormFields();
     } catch (error) {
       switch(error.code) {
         case 'auth/wrong-password':
-        alert('incorrect paswword and email')
+        alert('incorrect password and email')
         break;
         case 'auth/user-not-found':
         alert('User not found')
