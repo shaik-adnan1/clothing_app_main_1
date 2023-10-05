@@ -28,19 +28,19 @@ const Authentication = () => {
   //   } 
   // }, [])
 
-  useEffect(async () => {
-    const response = await getRedirectResult(auth)
-    console.log(response);
+  // useEffect(async () => {
+  //   const response = await getRedirectResult(auth)
+  //   console.log(response);
 
-    if(response) {
-      const userDocRef = await createUserDocumentFromAuth(response.user);
-    }
-  }, [])
+  //   if(response) {
+  //     const userDocRef = await createUserDocumentFromAuth(response.user);
+  //   }
+  // }, [])
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
-    console.log(user);
+    // console.log(user);
   };
 
   // const logGoogleRedirectUser = async () => {

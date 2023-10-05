@@ -14,7 +14,6 @@ import "./sign-in-form.style.scss";
 import { useState, useContext } from "react";
 import { UserContext } from "../../context/user.context";
 
-
 const defaultFormFields = {
   email: "",
   password: "",
@@ -24,9 +23,9 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  // importing the value of a userContext. 
+  // importing the value of a userContext.
 
-  const { setCurrentUser } = useContext(UserContext)
+  const { setCurrentUser } = useContext(UserContext);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -36,8 +35,6 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-
-    await createUserDocumentFromAuth(user);
   };
 
   const handleChange = e => {
@@ -55,19 +52,19 @@ const SignInForm = () => {
 
     try {
       const { user } = await signInAuthWithEmailAndPassword(email, password);
-      // Now we can use the properties/values form the userContext object  
-      setCurrentUser(user)
+      // Now we can use the properties/values form the userContext object
+      // setCurrentUser(user)
       resetFormFields();
     } catch (error) {
-      switch(error.code) {
-        case 'auth/wrong-password':
-        alert('incorrect password and email')
-        break;
-        case 'auth/user-not-found':
-        alert('User not found')
-        break;
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("incorrect password and email");
+          break;
+        case "auth/user-not-found":
+          alert("User not found");
+          break;
         default:
-          console.log(error.message)
+          console.log(error.message);
       }
     }
   };
@@ -95,15 +92,13 @@ const SignInForm = () => {
           value={password}
         />
         <div className='buttons-container'>
-          <Button type='submit'>
-            Sign In
-          </Button>
+          <Button type='submit'>Sign In</Button>
           <Button
             // className='testclass'
             onClick={signInWithGooglePopup}
             buttonType='google'
           >
-            Sign In With Google
+            Sign In with Google
           </Button>
         </div>
       </form>
