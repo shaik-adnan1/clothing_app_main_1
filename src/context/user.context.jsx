@@ -16,7 +16,7 @@ export const UserProvider = ({children}) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [currentUser, setCurrentUser] = useState(null);
-    const value = { currentUser, setCurrentUser}
+    const value = { currentUser, setCurrentUser }
 
     // signOutUser(); 
 
