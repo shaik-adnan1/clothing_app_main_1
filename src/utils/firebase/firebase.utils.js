@@ -20,6 +20,8 @@ import {
   setDoc,
   collection,
   writeBatch,
+  query,
+  getDocs,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -79,8 +81,58 @@ export const addCollectionAndDocuments = async (
    */
 
   await batch.commit();
-  console.log('Done!')
+  console.log("Done!");
 };
+
+// GETTING PRODUCT CATEGORIES FROM FIRESTORE
+
+export const getCategoriesAndDocuments = async () => {
+  // REFERRING TO COLLECTION IN OUR FIRESTORE
+  const collectionRef = collection(db, "categories");
+
+  // CREATING A QUERY BASED ON THE REFERENCE
+  const q = query(collectionRef);
+
+  // GETTING DOCS OF THE QUERY --
+  // DEPENDS ON COLLECTION KEY WE PASS INSIDE COLLECTIONREF
+  const querySnapshot = await getDocs(q);
+  // querySnapshot.docs;
+
+  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    
+    // DESTRUCTURING title and items from dacSnapshot.
+    const { title, items } = docSnapshot.data();
+
+    // assigning title with items and returning new object
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  return categoryMap;
+};
+
+// DATA STRUCTURE
+/*
+
+{
+  hats: {
+    title: 'hats',
+    items: [
+      {},
+      {}
+    ]
+  },
+  sneakers: {
+    title: 'sneakers',
+    items: [
+      {},
+      {}
+    ]
+  }
+}
+
+
+*/
 
 //   console.log(db);
 
