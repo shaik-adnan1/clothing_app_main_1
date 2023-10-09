@@ -13,7 +13,14 @@ import {
 
 // Firestore
 
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -44,6 +51,36 @@ export const signInWithGoogleRedirect = () =>
 // Firestore
 
 export const db = getFirestore();
+
+// Adding collections to firebase
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  // initialized a collection in db
+  const collectionRef = collection(db, collectionKey);
+
+  const batch = writeBatch(db);
+
+  // looping the collection of our data and adding batch functionality to
+  objectsToAdd.forEach(obj => {
+    // referencing the database
+    const docRef = doc(collectionRef, obj.title.toLowerCase());
+
+    batch.set(docRef, obj);
+  });
+  /**
+   * I - 1000
+   *
+   *
+   *
+   *
+   * You - 1000
+   */
+
+  await batch.commit();
+  console.log('Done!')
+};
 
 //   console.log(db);
 
