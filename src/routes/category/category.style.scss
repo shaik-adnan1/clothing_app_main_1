@@ -3,3 +3,15 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
 }
+
+.category-title {
+    font-size: 38px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #000;
+
+    // h2 {
+    // }
+    // width: fit-content;
+}

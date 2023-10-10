@@ -16,19 +16,20 @@ const Category = () => {
   }, [category, categoriesMap]);
 
   return (
-    <div className='category-container'>
-      {
-        products &&
+    <>
+      <h2 className='category-title'>{category}</h2>
+
+      <div className='category-container'>
+        {products &&
           products.map(product => {
             return <ProductCard key={product.id} product={product} />;
-          })
-      }
-    </div>
+          })}
+      </div>
+    </>
   );
 };
 
 export default Category;
-
 
 // import { useContext, useState, useEffect, Fragment } from "react";
 // import { useParams } from "react-router-dom";
