@@ -1,4 +1,6 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useReducer } from "react";
+
+import { USER_ACTION_TYPES } from "./user.context";
 
 const addCartItem = (cartItems, productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -51,12 +53,47 @@ export const CartContext = createContext({
 
 
 
+const CartReducer = (state, action) => {
+   const {type, payload} = action;
+
+   switch (type) {
+    case USER_ACTION_TYPES.ADD_ITEM_TO_CART:
+      return {  
+        
+      }
+    case USER_ACTION_TYPES.REMOVE_ITEM_FROM_CART:
+      return {
+
+      }
+    case USER_ACTION_TYPES.CLEAR_ITEM_FROM_CART:
+      return {
+
+      }
+    default: 
+
+   }
+
+
+}
+
+
 
 export const CartProvider = ({ children }) => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
-  const [cartTotal, setCartTotal] = useState(0);
+
+  const INITIAL_STATE = {
+    cartItems: [],
+  }
+
+  const [{cartItems}, dispatch ] = useReducer(CartReducer, INITIAL_STATE);
+
+  setCartItems = (product) {
+    dispatch({type: })
+  }
+
+  // const [isCartOpen, setIsCartOpen] = useState(false);
+  // const [cartItems, setCartItems] = useState([]);
+  // const [cartCount, setCartCount] = useState(0);
+  // const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
     const newCartCount = cartItems.reduce(
@@ -75,7 +112,7 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addItemToCart = productToAdd => {
-    setCartItems(addCartItem(cartItems, productToAdd));
+    setCartItems(productToAdd);
   };
 
   const removeItemToCart = cartItemToRemove => {

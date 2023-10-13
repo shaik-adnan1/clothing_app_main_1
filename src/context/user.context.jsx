@@ -12,6 +12,9 @@ export const UserContext = createContext({
 
 export const USER_ACTION_TYPES = {
   SET_CURRENT_USER: 'SET_CURRENT_USER',
+  ADD_ITEM_TO_CART: 'ADD_ITEM_TO_CART',
+  REMOVE_ITEM_FROM_CART: 'REMOVE_ITEM_FROM_CART',
+  CLEAR_ITEM_FROM_CART: 'CLEAR_ITEM_FROM_CART',
 }
 
 const userReducer = (state, action) => {
