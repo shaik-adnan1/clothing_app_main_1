@@ -7,20 +7,25 @@ import App from "./App";
 import { UserProvider } from "./context/user.context";
 import { CategoriesProvider } from "./context/categories.context.jsx";
 import { CartProvider } from "./context/cart.context";
+import { Provider } from "react-redux";
+
+import store from './store/store'
 
 import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <UserProvider>
+          <CategoriesProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </CategoriesProvider>
+        </UserProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

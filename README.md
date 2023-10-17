@@ -94,3 +94,20 @@ Link component will creates a link through which you can route between pages!!
 
 ![In Context Api](image-2.png)
 ![In Redux store](image-3.png)
+
+------------- REDUX ----------------
+
+1: Setting up a <STORE> folder => containing all of redux code
+
+==> This is where our state live, receive actions and dispatch actions
+==> Every store for it to work, needs reducers!
+
+// ROOT-REDUCER => combination of all reducers
+
+==> import { combineReducers } from "redux";
+
+--- combineReducers basically allows you to combine multiple reducers!
+
+-------- Flow in Redux Store and Reducers ------------ 
+
+==> The reducers in redux receives every single action that gets dispatches and returns a default as "state" value.

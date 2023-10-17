@@ -13,14 +13,15 @@ export const UserContext = createContext({
 
 export const USER_ACTION_TYPES = {
   SET_CURRENT_USER: 'SET_CURRENT_USER',
-  ADD_ITEM_TO_CART: 'ADD_ITEM_TO_CART',
-  REMOVE_ITEM_FROM_CART: 'REMOVE_ITEM_FROM_CART',
-  CLEAR_ITEM_FROM_CART: 'CLEAR_ITEM_FROM_CART',
 }
 
+  const INITIAL_STATE = {
+    currentUser: null,
+  };
+  
+
 const userReducer = (state, action) => {
-  console.log('dispatched')
-  console.log(action)
+
   const { type, payload } = action;
 
   switch (type) {
@@ -40,11 +41,7 @@ export const UserProvider = ({ children }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   // const [currentUser, setCurrentUser] = useState(null);
   
-  const INITIAL_STATE = { 
-    currentUser: null
-  
-  }
-  
+
   const [{currentUser}, dispatch] = useReducer(userReducer, INITIAL_STATE);
   console.log(currentUser)
   const setCurrentUser = (user) => {
