@@ -79,33 +79,18 @@ Link component will creates a link through which you can route between pages!!
 
 <Link className="nav-link" to='/shop'>Shop</Link> ----> The "to" attribute sets the destination of the route and you can also pass in component into the Link tag
 
+// STARTING WITH ------------- REDUX --------------
 
 
-<!-- Heeyyyyyy
+ ====> CONTEXT API VS REDUX  <======
 
-  OKok chudu see nenu anni sarlu important ani anttuu
-  and also ivale chepthe excitment pothadhi ante 
-  pakka neeku ardam aipoyi untadhi that it was about your birthday 😭😭😭
-  okk yess it is
+1: Accessibility (of data)
+2: Flow of data
 
-  sooo seee First thingg advance happyyy birthday reeee
-  you're 20 years old now, numbers tho count chesthe technically 2 years older than mee
-  not fairrr😭😭😭😭
+![How Context wrap around Apps](image.png) => context Api
+![How Redux wrap around Apps](image-1.png) => Redux store
 
-  see pakka there will bee full calls and stuff and then you'll be tired after that
-  i will send you a feww videos i made for your birthday 
-  seee ivvi are not the same talk video
-  
-  there is something more special for you nanaa
-  i hope you'll like ittt😶‍🌫️
+=> data flow 
 
-  seee motham free ayaka when you're alone in your bed or whatever watch them nana
-  ee sarii watch them in one goooo please reee😭
-
-  you'll really like them
-  i hope you do😶‍🌫️
-
-  evaru lenapudu when you're all free then watch itt nanna
-  Happy birthday love youuu
-
- -->
+![In Context Api](image-2.png)
+![In Redux store](image-3.png)
