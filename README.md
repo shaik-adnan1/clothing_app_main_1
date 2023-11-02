@@ -1,4 +1,3 @@
-Certainly! Here's the complete README markdown for your Crown Clothing app:
 
 ```markdown
 # Crown Clothing - Your Ultimate Fashion Destination
@@ -80,7 +79,7 @@ To run the Crown Clothing app on your local machine, follow these steps:
 
 ## Usage
 
-- Visit the deployed site at [https://your-crown-clothing-app-url.com](https://your-crown-clothing-app-url.com).
+- Visit the deployed site at [https://your-crown-clothing-app-url.com]([https://your-crown-clothing-app-url.com](https://transcendent-cendol-a3c008.netlify.app/)).
 - Browse the extensive collection of clothing items.
 - Sign in and enjoy a personalized shopping experience.
 - Explore the smooth navigation facilitated by React Router.
@@ -94,10 +93,3 @@ We welcome contributions from the community. If you'd like to improve the app or
 3. Commit your changes: `git commit -m 'Add some feature'`.
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Replace "link-to-your-logo.png" with the actual link to your project logo and make any other adjustments to the content as needed.
