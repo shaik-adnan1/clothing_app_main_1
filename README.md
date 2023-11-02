@@ -2,7 +2,7 @@
 ```markdown
 # Crown Clothing - Your Ultimate Fashion Destination
 
-![Crown Clothing Logo](link-to-your-logo.png)
+## Crown Clothing Logo
 
 Crown Clothing is an online fashion store built with React, offering a wide range of clothing items for every style. Our app is designed to provide a seamless shopping experience, integrating the latest web technologies.
 
@@ -17,10 +17,10 @@ Crown Clothing is an online fashion store built with React, offering a wide rang
 
 ## Features
 
-- **React**: The app is built using React, making it fast and responsive.
-- **Authentication**: Users can create an account, sign in with Google, or use their email and password for authentication, all handled through Firebase.
-- **State Management**: We initially leveraged the Context API for state management and have now moved to Redux for more robust state control.
-- **React Router**: Our routing is powered by React Router, allowing for smooth navigation throughout the app.
+**React**: The app is built using React, making it fast and responsive.
+**Authentication**: Users can create an account, sign in with Google, or use their email and password for authentication, all handled through Firebase.
+**State Management**: We initially leveraged the Context API for state management and have now moved to Redux for more robust state control.
+**React Router**: Our routing is powered by React Router, allowing for smooth navigation throughout the app.
 
 ## Technologies
 
