@@ -26,7 +26,6 @@ Crown Clothing is an online fashion store built with React, offering a wide rang
 - Redux (State Management)
 - React Router (Routing)
 - CSS-in-JS (Styled Components, Emotion, or similar)
-- Any other technologies or libraries you've used
 
 ## **Installation**
 
