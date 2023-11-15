@@ -40,7 +40,7 @@ git checkout -b my-main-branch
 
 <!-- REACT ROUTING -->
 
-// BrowserRoute
+## // BrowserRoute
 
 first importing the BrowserRoute component in the Top most level component in out application
 
@@ -82,9 +82,9 @@ Link component will creates a link through which you can route between pages!!
 
 <Link className="nav-link" to='/shop'>Shop</Link> ----> The "to" attribute sets the destination of the route and you can also pass in component into the Link tag
 
-// STARTING WITH ------------- REDUX --------------
+# // STARTING WITH ------------- REDUX --------------
 
-====> CONTEXT API VS REDUX <======
+## ====> CONTEXT API VS REDUX <======
 
 1: Accessibility (of data)
 2: Flow of data
@@ -92,33 +92,33 @@ Link component will creates a link through which you can route between pages!!
 ![How Context wrap around Apps](image.png) => context Api
 ![How Redux wrap around Apps](image-1.png) => Redux store
 
-=> data flow
+## => data flow
 
 ![In Context Api](image-2.png)
 ![In Redux store](image-3.png)
 
-------------- REDUX ----------------
+# ------------- REDUX ----------------
 
 1: Setting up a <STORE> folder => containing all of redux code
 
 ==> This is where our state live, receive actions and dispatch actions
 ==> Every store for it to work, needs reducers!
 
-// ROOT-REDUCER => combination of all reducers
+# // ROOT-REDUCER => combination of all reducers
 
 ==> import { combineReducers } from "redux";
 
 --- combineReducers basically allows you to combine multiple reducers!
 
--------- Flow in Redux Store and Reducers ------------
+# -------- Flow in Redux Store and Reducers ------------
 
--------- || THE REDUCERS || -------------
+# -------- || THE REDUCERS || -------------
 
 ==> The reducers in redux receives every single action that gets dispatches and returns a default as "state" value.
 
 1: Reducer(UserReducer) => performs certain function and returns a state based on dispatch function
 
----------- || THE ROOT-REDUCERS || -------------
+# ---------- || THE ROOT-REDUCERS || -------------
 
 2: now the reducer(UserReducer) is combined with remaining reducers in rootReducer.js
 
@@ -130,10 +130,13 @@ user: userReducer
 
 // values => key:value => nameOfTheReducer: actual reducer function
 
+```javascript
 ------------ || THE STORE || ---------------
+```
 
 3: inside store.js we start with importing
 -> compose, createStore, middleWares
+
 
 Now to create a store we use <createStore function>
 
@@ -145,3 +148,17 @@ Now to create a store we use <createStore function>
 -> inOrder for the middleWares to work we need to call <compose>
 
 <const composedEnhancers = compose(applyMiddleware(...middleWares))>
+
+
+
+# ------------ || HOW A REDUCER WORKS || ---------------
+
+### first there are 3 things 
+
+1 => Store - keeps the state of the application
+2 => Action - Describes what happened 
+3 => Reducer - Ties the store and action
+
+### A few principles to remember 
+
+=> The state of the whole application should be stored in an object tree within a single store
