@@ -162,3 +162,7 @@ Now to create a store we use <createStore function>
 ### A few principles to remember 
 
 => The state of the whole application should be stored in an object tree within a single store
+
+=> the only way to change the state is to emit an action, an object describing what happened
+
+=> to specify how the state tree is transformed by actions, you write pure reducers
