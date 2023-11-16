@@ -11,14 +11,14 @@ const ProductCard = ({ product }) => {
   // console.log(product)
 
   const { cartItems, addItemToCart } = useContext(CartContext);
-  console.log("products")
-  console.log(product)
+  // console.log("products")
+  // console.log(product)
   const addProductToCart = () => {
     addItemToCart(product);
     // updateCartCount();
-    console.log(cartItems);
+    // console.log(cartItems);
   };
-  console.log(imageUrl)
+  // console.log(imageUrl)
   return (
     <div className='product-card-container'>
       <img src={imageUrl} alt={name} />

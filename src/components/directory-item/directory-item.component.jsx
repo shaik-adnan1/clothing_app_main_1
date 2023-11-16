@@ -7,15 +7,15 @@ import {
 } from "./directory-item.style.jsx";
 
 const DirectoryItem = ({ category }) => {
-  const { imageurl, title, route } = category;
+  const { imageUrl, title, route } = category;
   const navigate = useNavigate();
 
   const onNavigateHandler = () => navigate(route);
-  console.log(imageurl)
+  console.log(imageUrl);
 
   return (
     <DirectoryItemContainer onClick={onNavigateHandler}>
-      <BackgroundImage $imageurl={imageurl} />
+      <BackgroundImage $imageUrl={imageUrl} />
       <Body>
         <h2>{title}</h2>
         <p>Shop Now</p>

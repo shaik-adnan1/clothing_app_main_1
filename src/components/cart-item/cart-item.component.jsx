@@ -5,12 +5,12 @@ import {
 } from "./cart-item.style.jsx";
 
 const CartItem = ({ cartItem }) => {
-  const { name, imageurl, quantity, price } = cartItem;
-  console.log(imageurl)
+  const { name, imageUrl, quantity, price } = cartItem;
+  console.log(imageUrl)
   console.log(cartItem)
   return (
     <CartItemContainer>
-      <img src={imageurl} alt={name} />
+      <img src={imageUrl} alt={name} />
       <ItemDetails>
         <CartItemName>{name}</CartItemName>
         <span>
