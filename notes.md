@@ -84,10 +84,10 @@ Link component will creates a link through which you can route between pages!!
 
 // STARTING WITH ------------- REDUX --------------
 
-====> CONTEXT API VS REDUX <======
+# ====> CONTEXT API VS REDUX <======
 
-1: Accessibility (of data)
-2: Flow of data
+## 1: Accessibility (of data)
+## 2: Flow of data
 
 ![How Context wrap around Apps](image.png) => context Api
 ![How Redux wrap around Apps](image-1.png) => Redux store
@@ -97,28 +97,28 @@ Link component will creates a link through which you can route between pages!!
 ![In Context Api](image-2.png)
 ![In Redux store](image-3.png)
 
-------------- REDUX ----------------
+# ------------- REDUX ----------------
 
 1: Setting up a <STORE> folder => containing all of redux code
 
 ==> This is where our state live, receive actions and dispatch actions
 ==> Every store for it to work, needs reducers!
 
-// ROOT-REDUCER => combination of all reducers
+## // ROOT-REDUCER => combination of all reducers
 
 ==> import { combineReducers } from "redux";
 
 --- combineReducers basically allows you to combine multiple reducers!
 
--------- Flow in Redux Store and Reducers ------------
+# -------- Flow in Redux Store and Reducers ------------
 
--------- || THE REDUCERS || -------------
+## -------- || THE REDUCERS || -------------
 
 ==> The reducers in redux receives every single action that gets dispatches and returns a default as "state" value.
 
 1: Reducer(UserReducer) => performs certain function and returns a state based on dispatch function
 
----------- || THE ROOT-REDUCERS || -------------
+## ---------- || THE ROOT-REDUCERS || -------------
 
 2: now the reducer(UserReducer) is combined with remaining reducers in rootReducer.js
 
@@ -130,7 +130,7 @@ user: userReducer
 
 // values => key:value => nameOfTheReducer: actual reducer function
 
------------- || THE STORE || ---------------
+## ------------ || THE STORE || ---------------
 
 3: inside store.js we start with importing
 -> compose, createStore, middleWares
@@ -145,3 +145,9 @@ Now to create a store we use <createStore function>
 -> inOrder for the middleWares to work we need to call <compose>
 
 <const composedEnhancers = compose(applyMiddleware(...middleWares))>
+
+-> 
+
+whenever an action is dispatched with a certain type and payload
+
+the reducer then checks for the type of action and updates the state with or without the payload, depending on the action type.

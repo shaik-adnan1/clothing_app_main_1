@@ -7,10 +7,12 @@ import { CategoriesProvider } from "../../context/categories.context";
 
 const Shop = () => {
   return (
-    <Routes>
-      <Route index element={<CategoriesPreview />} />
-      <Route path=':category' element={<Category />} />
-    </Routes>
+    <CategoriesProvider>
+      <Routes>
+        <Route index element={<CategoriesPreview />} />
+        <Route path=':category' element={<Category />} />
+      </Routes>
+    </CategoriesProvider>
   );
 };
 
