@@ -1,10 +1,14 @@
 // import "./categories-preview.style.scss";
 import { Fragment } from "react";
 
+import { useSelector } from "react-redux";
+import { selectCategories } from "../../store/categories/categories.selector.js";
 import CategoryPreview from "../../components/category-preview/category-preview.component.jsx";
 // import ProductCard from "../../components/product-card/product-card.component";
 
-const CategoriesPreview = ({categoriesMap}) => {
+const CategoriesPreview = () => {
+
+  const categoriesMap = useSelector(selectCategories)
   // const { categoriesMap } = useContext(CategoriesContext);
   // console.log((categoriesMap));
   return (

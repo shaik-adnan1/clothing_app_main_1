@@ -151,3 +151,18 @@ Now to create a store we use <createStore function>
 whenever an action is dispatched with a certain type and payload
 
 the reducer then checks for the type of action and updates the state with or without the payload, depending on the action type.
+
+## curry functions 😭
+
+=> A curry function is a function inside another function basically chained
+
+
+const currFun = (a) => (b, c) => {
+    return a + b - c; 
+}
+
+const with5 = currFun(5)
+const with10 = currFun(10)
+
+with5(6, 1)
+with10(6, 1)

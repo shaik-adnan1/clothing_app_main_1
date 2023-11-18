@@ -11,8 +11,7 @@ import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 
 import "./sign-in-form.style.scss";
 
-import { useState, useContext } from "react";
-import { UserContext } from "../../context/user.context";
+import { useState } from "react";
 
 const defaultFormFields = {
   email: "",
@@ -24,8 +23,6 @@ const SignInForm = () => {
   const { email, password } = formFields;
 
   // importing the value of a userContext.
-
-  const { setCurrentUser } = useContext(UserContext);
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);

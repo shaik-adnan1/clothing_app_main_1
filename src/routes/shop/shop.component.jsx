@@ -7,10 +7,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import CategoriesPreview from "../categories-preview/categories-preview.component";
 import Category from "../category/category.component";
-import { CategoriesProvider } from "../../context/categories.context";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import { setCategoriesMap } from "../../store/categories/caregories.action";
-import { selectCategoriesMap } from "../../store/categories/categories.selector";
+import { setCategories } from "../../store/categories/caregories.action";
+import { selectCategories } from "../../store/categories/categories.selector";
 
 const Shop = () => {
 
@@ -18,28 +17,25 @@ const Shop = () => {
 
    useEffect(() => {
      const getCategoriesMap = async () => {
-       const categoryMap = await getCategoriesAndDocuments("categories");
-       dispatch(setCategoriesMap(categoryMap));
+       const categoriesArray = await getCategoriesAndDocuments("categories");
+       dispatch(setCategories(categoriesArray))
      };
 
      getCategoriesMap();
    }, []);
 
-   const categoriesMap = useSelector(selectCategoriesMap)
 
   return (
-    <CategoriesProvider>
       <Routes>
         <Route
           index
-          element={<CategoriesPreview categoriesMap={categoriesMap} />}
+          element={<CategoriesPreview />}
         />
         <Route
           path=':category'
-          element={<Category categoriesMap={categoriesMap} />}
+          element={<Category />}
         />
       </Routes>
-    </CategoriesProvider>
   );
 };
 

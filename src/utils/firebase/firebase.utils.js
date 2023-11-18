@@ -98,17 +98,7 @@ export const getCategoriesAndDocuments = async () => {
   const querySnapshot = await getDocs(q);
   // querySnapshot.docs;
 
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    
-    // DESTRUCTURING title and items from dacSnapshot.
-    const { title, items } = docSnapshot.data();
-
-    // assigning title with items and returning new object
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return categoryMap;
+  return querySnapshot.docs.map((docSnapShot) => docSnapShot.data())
 };
 
 // DATA STRUCTURE
