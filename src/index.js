@@ -4,8 +4,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { UserProvider } from "./context/user.context";
-import { CategoriesProvider } from "./context/categories.context.jsx";
+// import { UserProvider } from "./context/user.context";
+// import { CategoriesProvider } from "./context/categories.context.jsx";
 import { CartProvider } from "./context/cart.context";
 import { Provider } from "react-redux";
 

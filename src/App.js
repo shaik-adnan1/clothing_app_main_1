@@ -1,6 +1,7 @@
 // import CategoryItem from "./components/category-item/category-item.component";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Routes, Route } from "react-router-dom";
 
 import {
   onAuthStateChangedListener,
@@ -8,11 +9,6 @@ import {
 } from "./utils/firebase/firebase.utils.js";
 
 import { setCurrentUser } from './store/user/user.action.js'
-
-import { Routes, Route } from "react-router-dom";
-
-
-
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
@@ -26,12 +22,11 @@ const App = () => {
 
    useEffect(() => {
      const unsubscribe = onAuthStateChangedListener(user => {
-       setCurrentUser(user);
 
        if (user) {
          createUserDocumentFromAuth(user);
        }
-       setCurrentUser(user);
+       dispatch(setCurrentUser(user));
      });
      return unsubscribe;
    }, []);

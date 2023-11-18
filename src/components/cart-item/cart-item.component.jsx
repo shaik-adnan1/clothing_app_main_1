@@ -6,8 +6,8 @@ import {
 
 const CartItem = ({ cartItem }) => {
   const { name, imageUrl, quantity, price } = cartItem;
-  console.log(imageUrl)
-  console.log(cartItem)
+  // console.log(imageUrl)
+  // console.log(cartItem)
   return (
     <CartItemContainer>
       <img src={imageUrl} alt={name} />
