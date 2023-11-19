@@ -47,7 +47,7 @@ const SignUpForm = () => {
     }
 
     try {
-      console.log(email, password);
+      // console.log(email, password);
       const { user } = await createAuthWithEmailAndPassword(email, password);
       // setCurrentUser(user);
 

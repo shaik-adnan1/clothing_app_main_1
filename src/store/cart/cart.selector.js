@@ -11,7 +11,7 @@ export const selectCartItems = createSelector(
 export const selectIsCartOpen = createSelector(
   [selectCartReducer],
   cart => {
-    console.log("cart.isCartOpen", cart.isCartOpen) 
+    // console.log("cart.isCartOpen", cart.isCartOpen) 
     return cart.isCartOpen}
 );
 

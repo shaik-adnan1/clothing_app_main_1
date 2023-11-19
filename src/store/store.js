@@ -17,13 +17,13 @@ const loggerMiddleware = (store) => (next) => (action) => {
     return next(action);
   }
 
-  console.log("type", action.type);
-  console.log("payload", action.payload);
-  console.log("Current State", store.getState());
+  // console.log("type", action.type);
+  // console.log("payload", action.payload);
+  // console.log("Current State", store.getState());
 
   next(action);
 
-  console.log("Next State", store.getState());
+  // console.log("Next State", store.getState());
 
 }
 
