@@ -6,6 +6,7 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  
 `;
 
 export const Body = styled.div`
@@ -44,6 +45,7 @@ export const DirectoryItemContainer = styled.div`
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  transition: all 0.5s ease;
 
   &:hover {
     cursor: pointer;
