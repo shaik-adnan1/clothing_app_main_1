@@ -19,6 +19,11 @@ export const selectCategoriesMap = createSelector(
 }
 ) 
 
+export const selectIsLoading = createSelector(
+  [selectCategoryReducer], 
+  (categoriesSlice) => categoriesSlice.isLoading 
+)
+
 
 //   return state.categories.categories.reduce((acc, category) => {
 //     // DESTRUCTURING title and items from dacSnapshot.
