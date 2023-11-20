@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import ProductCard from '../product-card/product-card.component';
 import './category-preview.style.scss'
+import Category from '../../routes/category/category.component';
 
 const CategoryPreview = ({title, products}) => {
     return (

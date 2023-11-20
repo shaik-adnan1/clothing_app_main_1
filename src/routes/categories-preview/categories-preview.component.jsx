@@ -9,8 +9,7 @@ import CategoryPreview from "../../components/category-preview/category-preview.
 const CategoriesPreview = () => {
 
   const categoriesMap = useSelector(selectCategoriesMap)
-  // const { categoriesMap } = useContext(CategoriesContext);
-  // console.log((categoriesMap));
+  console.log(categoriesMap)
   return (
     <Fragment>
       {Object.keys(categoriesMap).map((title, i) => {
