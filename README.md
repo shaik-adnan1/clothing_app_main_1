@@ -10,20 +10,21 @@ Crown Clothing is an online fashion store built with React, offering a wide rang
 - Installation
 - Usage
 - Contributing
-- License
 
 ## **Features**
 
 - React: The app is built using React, making it fast and responsive.
 - Authentication: Users can create an account, sign in with Google, or use their email and password for authentication, all handled through Firebase.
-- State Management: We initially leveraged the Context API for state management and have now moved to Redux for more robust state control.
+- State Management: I initially leveraged the Context API for state management and have now moved to Redux for more robust state control.
+- Redux: Implementing Redux along with extended tools like, Redux Thunk for Asynchronous redux and reselect for renders optimizations within selectors and
+- leverages redux persist for local storage usage for performance optimizations faster reload speeds.
 - React Router: Our routing is powered by React Router, allowing for smooth navigation throughout the app.
 
 ## **Technologies**
 
 - React
 - Firebase (Authentication, Firestore)
-- Redux (State Management)
+- Redux (_Thunk, _Persist, _Reselect) (State Management)
 - React Router (Routing)
 - CSS-in-JS (Styled Components, Emotion, or similar)
 

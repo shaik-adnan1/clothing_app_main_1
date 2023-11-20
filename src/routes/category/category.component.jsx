@@ -11,7 +11,7 @@ import Spinner from "../../components/spinner/spinner.component";
 
 const Category = () => {
   const { category } = useParams();
-  console.log(category)
+  // console.log(category)
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectIsLoading)
   const [products, setProducts] = useState(categoriesMap[category]);
@@ -28,7 +28,7 @@ const Category = () => {
         <div className='category-container'>
           {products &&
             products.map(product => {
-              console.log(product);
+              // console.log(product);
               return <ProductCard key={product.id} product={product} />;
             })}
         </div>
