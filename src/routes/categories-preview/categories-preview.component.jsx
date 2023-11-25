@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 
 import { useSelector } from "react-redux";
+import { ClimbingBoxLoader } from "react-spinners";
 import {
   selectCategoriesMap,
   selectIsLoading,

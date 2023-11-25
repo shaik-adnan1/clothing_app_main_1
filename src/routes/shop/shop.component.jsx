@@ -8,27 +8,20 @@ import { useDispatch, useSelector } from "react-redux";
 import CategoriesPreview from "../categories-preview/categories-preview.component";
 import Category from "../category/category.component";
 
-import { fetchCategoriesAsync } from "../../store/categories/caregories.action";
-const Shop = () => {
+import { fetchCategoriesStart } from "../../store/categories/categories.action";
 
+const Shop = () => {
   const dispatch = useDispatch();
 
-   useEffect(() => {
-     dispatch(fetchCategoriesAsync())
-   }, []);
-
+  useEffect(() => {
+    dispatch(fetchCategoriesStart());
+  }, []);
 
   return (
-      <Routes>
-        <Route
-          index
-          element={<CategoriesPreview />}
-        />
-        <Route
-          path=':category'
-          element={<Category />}
-        />
-      </Routes>
+    <Routes>
+      <Route index element={<CategoriesPreview />} />
+      <Route path=':category' element={<Category />} />
+    </Routes>
   );
 };
 
