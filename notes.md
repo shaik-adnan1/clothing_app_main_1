@@ -166,3 +166,10 @@ const with10 = currFun(10)
 
 with5(6, 1)
 with10(6, 1)
+
+# THUNK 
+- will be updated later 
+
+# Sagas (AsyncRedux)
+
+- terms and actions exchange =` yield <-> async` `put <-> dispatch` 
