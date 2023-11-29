@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
+
 import {
   createAuthWithEmailAndPassword,
   userDocRef,
@@ -22,6 +25,8 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  const dispatch = useDispatch();
+
   // importing the value of a userContext.
 
   const resetFormFields = () => {
@@ -30,8 +35,8 @@ const SignInForm = () => {
 
   // ----------- ONCLICK FORM HANDLE CHANGE --------
 
-  const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
+  const signInWithGoogle = () => {
+    dispatch(googleSignInStart())
   };
 
   const handleChange = e => {
@@ -48,7 +53,7 @@ const SignInForm = () => {
     e.preventDefault();
 
     try {
-      const { user } = await signInAuthWithEmailAndPassword(email, password);
+      dispatch(emailSignInStart())
       // Now we can use the properties/values form the userContext object
       // setCurrentUser(user)
       resetFormFields();
@@ -92,7 +97,7 @@ const SignInForm = () => {
           <Button type='submit'>Sign In</Button>
           <Button
             // className='testclass'
-            onClick={signInWithGooglePopup}
+            onClick={signInWithGoogle}
             buttonType={BUTTON_TYPE_CLASSES.google}
           >
             Sign In with Google
